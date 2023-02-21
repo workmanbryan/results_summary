@@ -1,0 +1,135 @@
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    border-radius: 30px;
+    max-height: 450px;
+    max-width: 367px;
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint-up(desktop){
+        max-width: 367px;
+        max-height: 510px;
+        height: 100%;
+        justify-content: space-around;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 315px;
+    }
+
+    &__title {
+        margin: 20px 30px 0px;
+        width: 100%;
+        > p {
+            color: $DarkGrayBlue;
+            font-weight: $HeavyWeight;
+            width: 100%;
+        }
+    }
+
+    &__breakdown {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 20px 30px 0px;
+        width: 100%;
+        @include breakpoint-up(desktop){
+            margin: 30px 30px 0px;
+        }   
+        
+        .reaction, .memory, .verbal, .visual {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+            height: 56px;
+            border-radius: 5px;
+            p {
+                margin: 10px 0px;
+            }
+        }
+
+        .reaction {
+            background-color: hsla(0, 100%, 67%, 15%);
+            > p {
+                color: $LightRed;
+            }
+        }
+
+        .memory {
+            background-color: hsla(39, 100%, 56%, 15%);
+            > p {
+                color: $OrangeyYellow;
+            }
+        }
+
+        .verbal {
+            background-color: hsla(166, 100%, 37%, 15%);
+            > p {
+                color: $GreenTeal;
+            }
+        }
+
+        .visual {
+            background-color: hsla(234, 85%, 45%, 15%);
+            > p {
+                color: $CobaltBlue;
+            }
+        }
+
+        &__score {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+
+            #numerator {
+                color: $DarkGrayBlue;
+                padding-right: 5px;
+            }
+
+            p {
+                color: $LightLavender;
+                font-weight: $HeavyWeight;
+                padding-right: 5px;
+            }
+        }
+
+    }
+
+    &__icon {
+        margin: 5px 10px;
+    }
+
+    &__button {
+        width: 100%;
+        max-height: 54px;
+        height: 100%;
+        margin: 20px 30px 0px;
+        @include breakpoint-up(desktop){
+            justify-self: flex-end;
+            margin: 30px;
+        }
+
+        > button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 50px;
+            color: $White;
+            font-size: 18px;
+            font-weight: $LightWeight;
+            background-color: $DarkGrayBlue;
+        }
+    }
+}

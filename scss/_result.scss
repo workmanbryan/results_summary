@@ -1,0 +1,111 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient($LightSlateBlue, $LightRoyalBlue);
+    border-radius: 0px 0px 30px 30px;
+    max-height: 352px;
+    max-width: 375px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    
+    @include breakpoint-up(desktop){
+        max-width: 367px;
+        max-height: 510px;
+        border-radius: 30px;
+    }
+
+    &__title {
+        margin: 26px 60px;
+        display: flex;
+        align-items: center;
+        > p {
+            font-weight: $MidWeight;
+            color: $LightLavender;
+        }
+
+        @include breakpoint-up(desktop){
+            margin: 30px 60px;
+        }
+    }
+
+    &__score {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height: 140px;
+        max-width: 140px;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient($VioletBlue, $PersianBlue);
+        border-radius: 50%;
+
+        @include breakpoint-up(desktop){
+            max-width: 180px;
+            max-height: 180px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .numerator {
+            > p {
+                color: $White;
+                font-size: 50px;
+                font-weight: $HeavyWeight;
+
+                @include breakpoint-up(desktop){
+                    font-size: 64px;
+                }
+            }
+        }
+
+        .denominator {
+            color: $LightLavender;
+            font-weight: $LightWeight;
+            opacity: .5;
+            
+            > p {
+                font-size: 14px;
+                @include breakpoint-up(desktop){
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    &__description {
+        margin: 26px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoint-up(desktop){
+            margin: 30px 60px;
+        }
+
+        .rank {
+            margin-top: 10px;
+            > p {
+                color: $White;
+                font-size: 20px;
+                font-weight: $MidWeight;
+            }
+        }
+
+        .prose {
+            margin-top: 10px;
+            > p {
+                color: $LightLavender;
+                font-size: 16px;
+                @include breakpoint-up(desktop){
+                    font-size: 18px;
+                }
+            }
+        }
+
+    }
+}
